@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Montserrat:wght@100;400&family=Open+Sans:wght@300&family=Poppins:wght@200;400&family=Rajdhani:wght@300&family=Roboto+Condensed:wght@300&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.header{
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+}
+.nav ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 100px;
+}
+.nav ul li{
+    list-style: none;
+}
+.nav ul li a{
+    color: #000;
+    text-decoration: none;
+}
+.menu{
+    display: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: .5s;
+}
+.line1, .line2, .line3{
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    margin-bottom: 5px ;
+    transition: .5s;
+}
+.redBox{
+    position: relative;
+}
+.slider_oc{
+    z-index: 10;
+}
+.left_slider{
+    width: 300px;
+    height: 200px;
+    background: red;
+    position: absolute;
+    left: -100%;
+    text-align: right;
+    transition: .5s;
+}
+.left_slider.active{
+    left: 0;
+}
+.slider_oc.active .open{
+    display: none;
+    transition: .5s;
+}
+.slider_oc.active .close{
+    display: block;
+    transition: .5s;
+    z-index: 1;
+    position: relative;
+}
+.slider_oc .close{
+    display: none;
+    transition: .5s;
+}
+.slider_oc .open{
+    display: block;
+    transition: .5s;
+}
+
+@media screen and (max-width:1400px){
+    .menu{
+        display: block;
+        transition: .5s;
+    }
+    .nav{
+        position: absolute;
+        top: 0;
+        right: -100%;
+        background-color: aqua;
+        width: 50%;
+        height: 100vh;
+        transition: .5s;
+    }
+    .nav.active{
+        right: 0;
+    }
+    @keyframes c {
+        from{
+            opacity: 0;
+        }
+        top{
+            opacity: 1;
+        }
+    }
+    .nav ul{
+        display: inline-block;
+        text-align: center;
+    }
+    .menu.active .line1{
+        transform: rotate(45deg) translate(2px, 6px);
+    }
+    .menu.active .line2{
+        opacity: 0;
+    }
+    .menu.active .line3{
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    /* .menu.active .open{
+        display: none;
+        transition: .5s;
+    }
+    .menu.active .close{
+        display: block;
+        transition: .5s;
+    }
+    .menu .close{
+        display: none;
+        transition: .5s;
+    }
+    .menu .open{
+        display: block;
+        transition: .5s;
+    } */
+}
